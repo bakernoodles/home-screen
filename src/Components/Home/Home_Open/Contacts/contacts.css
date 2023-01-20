@@ -1,0 +1,134 @@
+:root{
+   --child-content-box-size: calc(100vw - 30px);
+}
+a{
+   all: unset;
+}
+.contacts-app-container{
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   max-width: var(--max-content-width);
+   background: rgb(0,0,0);
+   background: linear-gradient(180deg, rgba(0, 0, 0, 0.068) 0%, rgba(0, 0, 0, 0.808) 20%, rgba(0, 0, 0, 0.637) 100%);
+   padding: 0px 10px 20px;
+   animation: fadeIn .5s;
+   -webkit-animation: fadeIn .5s;
+  -moz-animation: fadeIn .5s;
+  -o-animation: fadeIn .5s;
+  -ms-animation: fadeIn .5s;
+}
+
+#me-box{
+   display: flex;
+   width: 100%;
+   padding: 15px;
+   margin-top: 5px;
+   cursor: pointer;
+}
+#me-box button {
+   width: 55px;
+   height: 55px;
+   border-radius: 5px;
+   border: none;
+   background: none;
+   margin-right: 15px;
+}
+
+#me-box p{
+   display: flex;
+   
+}
+#me-box:active{
+   position: relative;
+   background-color: rgba(255, 255, 255, 0.5);
+   color:darkslategray;
+   left: 1px;
+   top: 1px;
+}
+#myImage{
+   width: 55px;
+   height: 55px;
+   margin: 0px 15px 0px 0px;
+   border: solid 1px rgb(255, 255, 255);
+   border-radius: 50%;
+}
+
+#me-box-description{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: center;
+}
+#me-box-description h5{
+   font-weight: 100;
+   font-style: italic;
+}
+#contacts-box{
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+}
+#contacts-box-left{
+   width: 95%;
+}
+.letter-group{
+   display: flex;
+   flex-direction: column;
+   color: rgb(180, 180, 180);
+   text-align: left;
+   margin: 0px 0px;
+}
+.bottom-border{
+   border-bottom: 1px solid rgb(112, 112, 112);
+}
+.letter-group button{
+   text-align: left;
+   color: white;
+   background: none;
+   border: none;
+   border-bottom: 1px solid rgb(112, 112, 112);
+   margin: 0px 0px 0px 15px;
+   padding: 5px 0px;
+   font-size: 14px;
+   cursor: pointer;
+}
+.letter-group button:active{
+   position: relative;
+   background-color: rgba(255, 255, 255, 0.5);
+   color:darkslategray;
+   left: 1px;
+   top: 1px;
+}
+#alphabet-button-container{
+   position: fixed;
+   right: calc((100vw - var(--max-content-width)) / 2);
+   top: 33vh;
+   display: flex;
+   flex-direction: column;
+   width: 25px;
+   justify-content: flex-start ;
+   
+}
+#alphabet-button-container button{
+   font-size: 12px;
+   color: rgb(123, 180, 212);
+   background: none;
+   cursor: pointer;
+   border: none;
+}
+@media screen and (max-width: 715px){
+   #alphabet-button-container{
+      right: 5px;
+   }
+}
+@media screen and (max-height: 535px){
+   #alphabet-button-container{
+      position:static;
+   }
+}
+@media screen and (max-height: 700px){
+   #alphabet-button-container{
+      align-self: flex-start;
+   }
+}

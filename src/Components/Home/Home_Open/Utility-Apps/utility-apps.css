@@ -1,0 +1,62 @@
+:root{
+   --app-box-width: 30%;
+   --app-box-height: 40%;
+   --app-content-width: 90px;
+   --app-content-height: 90px;
+}
+.app-buttons{
+   display: flex;
+   flex-direction: column;
+   height: var(--app-box-height);
+   width: var(--app-box-width);
+   background: rgba(0, 0, 0, 0.952);
+   border-radius: 15px;
+   justify-content: flex-start;
+   align-items: center;
+   box-sizing: border-box;
+   padding: 8px;
+   cursor: pointer;
+   -webkit-tap-highlight-color: transparent;
+   
+}
+.app-buttons:active{
+   position: relative;
+   left: 1px;
+}
+.weather_icons{
+   width:50%;
+   height: 40%;
+   margin: auto;
+}
+.weatherTopText{
+   display: flex;
+   flex-direction: row;
+}
+
+#weatherApp{
+   background: rgb(8,41,106);
+   background: linear-gradient(180deg, rgba(8,41,106,1) 0%, rgba(22,109,148,1) 100%);
+   color: white;
+   border: none;
+   box-shadow: -4px 6px 55px -10px rgba(255,255,255,0.08) inset;
+   -webkit-box-shadow: -4px 6px 55px -10px rgba(255,255,255,0.08) inset;
+   -moz-box-shadow: -4px 6px 55px -10px rgba(255,255,255,0.08) inset;
+}
+button{
+   -webkit-tap-highlight-color: transparent;
+}
+
+@media  screen and (max-width: 600px) {
+   #weatherAppBtnBottomTxt{
+      user-select: none;
+    }
+    .app-buttons{
+      user-select: none;
+    }
+    #weatherApp{
+      user-select: none;
+    }
+    button{
+      user-select: none;
+    }
+}

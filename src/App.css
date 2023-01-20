@@ -1,38 +1,75 @@
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  background: url('../src/assets/background3.jfif');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: cover ;
+  background-position: center;
+}
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 30px 0px;
+  width: inherit;
+  min-width: 330px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  color: aliceblue;
+  padding: auto;
+  box-sizing: border-box;
+  z-index: 1;
+  overflow-x: none;
+  padding-bottom: 5px;
 }
-
-.App-link {
-  color: #61dafb;
+@keyframes fadeInOverlay{
+  0% {background-color: rgba(0, 0, 0, 0);}
+  100% {background-color: rgba(0, 0, 0, 0.096);}
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.overlay{
+  background-color: rgba(0, 0, 0, 0.096);
+  backdrop-filter: blur(15px);
+  position: fixed;
+  left: 0px;
+  width: 100vw;
+  height: inherit;
+  pointer-events: none;
+  min-width: 330px;
+  z-index: 2;
+  animation: fadeIn 2s;
+  animation-fill-mode: forwards;
+   -webkit-animation: fadeInOverlay 1s;
+  -moz-animation: fadeInOverlay 1s;
+  -o-animation: fadeInOverlay 1s;
+  -ms-animation: fadeInOverlay 1s;
+}
+.backButton{
+  position: relative;
+  justify-self:flex-end;
+  margin: 7px;
+  height: 30px;
+  width: 30px;
+  background: rgb(38,38,38);
+  background: transparent;
+  border-radius: 40%;
+  border: solid .5px white;
+  padding: 3px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.backButtonImage{
+  width: fit-content;
+  height: fit-content;
+  user-select: none;
+}
+.dateAndTime{
+  z-index: 3;
+  font-size: 23px;
+  user-select: none;
+  margin: 20px;
 }
