@@ -27,7 +27,9 @@ const Home_Open = (props) => {
                            weather = {props.weather}
                            tempScale={props.tempScale}
                            setTempScale={props.setTempScale}/>,
-      'contacts' : <Contacts hideAllAppsHandler = {hideAllAppsHandler}/>
+      'contacts' : <Contacts hideAllAppsHandler = {hideAllAppsHandler}
+                              isScrolled = {props.isScrolled}
+                              setIsScrolled = {props.setIsScrolled}/>
    }
 
    return (
@@ -46,3 +48,5 @@ const Home_Open = (props) => {
    )
 }
 export default Home_Open;
+
+

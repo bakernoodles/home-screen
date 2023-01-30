@@ -101,7 +101,7 @@ const contactsObj = {
    }],
    'S': [{
       firstname: 'John',
-      lastname: 'Smith',
+      lastname: 'Wick',
       number: '6783678988',
       address: '1234 apple ave, los angeles, ca',
       email: 'johnsm99@gmail.com',
@@ -135,7 +135,8 @@ const contactsObj = {
       address: '77656 North St, Los Angeles, CA',
       email: 'ZhaoZhao@hotmail.com',
       picture: defaultPic
-   }]
+   }],
+   '*': []
 }
 for (const char in contactsObj) {
    // if there are items in the array, sort them by last + first names

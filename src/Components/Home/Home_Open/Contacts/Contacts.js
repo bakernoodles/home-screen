@@ -5,27 +5,38 @@ import myImage2 from '../../../../assets/contact-icons/me2.jpg';
 import { useEffect, useState } from 'react';
 import contactsObj from '../../../../assets/contact-icons/contactsObj';
 import ContactEdit from "../Contacts/ContactEdit/ContactEdit";
-const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ*'.split('');
 
 const Contacts = (props) => {
    const [myself, setMyself] = useState(new Person('John', 'Xena', 8332255993, '516 S Anderson St, Los Angeles, CA 90033', 'BingChilling@gmail.com', myImage2));
    const [contacts, setContacts] = useState(contactsObj); // Contacts obj. keywords are the alphabet as strings. The value is an unsorted array of last names starting with the keyword. 
    const [hideList, setHideList] = useState(false);
-   const hideListHandler = () => {
+   const [currentContact, setCurrentContact] = useState(null);
+   const hideListHandler = (contact) => {
       setHideList(!hideList);
+      setCurrentContact(contact);
    }
-   
+   // if hide list is true, return
    if(hideList) return (
-   <ContactEdit 
+   <ContactEdit
+      currentContact = {currentContact}
       setHideList={setHideList} 
-      hideList={hideList}/>
+      hideList={hideList}
+      isScrolled = {props.isScrolled}
+      setIsScrolled = {props.setIsScrolled}
+      contacts = {contacts}
+      setContacts = {setContacts}
+   />
    );
    
    return (
       <div className="contacts-app-container">
+         <div className={props.isScrolled ? 'editContainer edit_container_onScroll' : 'editContainer'}>
          <button className='backButton' onClick={() => props.hideAllAppsHandler('no-open-apps')}>
             <img className='backButtonImage' alt=";back button" src={back_image} />
          </button>
+         </div>
+         
          {/*----------------------------------MY ID SECTION--------------------------------------*/}
          <div id="me-box">
             <img id="myImage" src={myself.picture ??= defaultPic} alt="" />
@@ -39,11 +50,11 @@ const Contacts = (props) => {
             <div id="contacts-box-left">
                {/* Loop through the alphabet. If there are contacts, Add the Character JSX.
                 Also, add the contacts JSX */}
-               {alphabet.map((char) => (
-                  <div id={char} key={char} className="letter-group">
+               {alphabet.map((char, index) => (
+                  <div id={char} key={index} className="letter-group">
                      {contacts[char].length ? <div className='bottom-border' tabIndex={0}>{char}</div> : null}
                      {!contacts[char].length ? null : contacts[char].map((contact, ind) => (
-                        <button key={"c" + ind} onClick={() => hideListHandler()} className='bottom-border'>
+                        <button key={"c" + ind} onClick={() => hideListHandler(contact)} className='bottom-border'>
                            {`${contact.firstname} ${contact.lastname}`}
                         </button>)
                      )}

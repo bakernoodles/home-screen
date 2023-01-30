@@ -28,7 +28,7 @@ const NavStats = (props) => {
          lockSound.play();
       }
    }
-   const statuspaneRef = useRef(null);
+ 
    useEffect(() => {
       function checkDistance(e){
          const position = window.scrollY;
@@ -36,17 +36,20 @@ const NavStats = (props) => {
          if(position > 0){
             if(!document.getElementById('statusPane').classList.contains('solidColorAnimation')){
                document.getElementById('statusPane').classList.add('solidColorAnimation');
+               props.setIsScrolled(true);
             }
          } else {
-            if(document.getElementById('statusPane').classList.contains('solidColorAnimation'))
+            if(document.getElementById('statusPane').classList.contains('solidColorAnimation')){
                document.getElementById('statusPane').classList.remove('solidColorAnimation');
+               props.setIsScrolled(false);
+            }
          }
       }
       window.addEventListener('scroll', checkDistance);
       return () => window.removeEventListener('scroll', checkDistance);
    },[])
    return (
-      <div id='statusPane' ref={statuspaneRef}>
+      <div id='statusPane'>
          <div id="leftStatus">
             <audio id='home-lock-sound' src={lockSound}></audio>
             <img

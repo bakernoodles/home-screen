@@ -8,6 +8,7 @@ function App() {
   const [isLocked, setIsLocked] = useState(true);
   const [weather, setWeather] = useWeather('');
   const [tempScale, setTempScale] = useWeather(1);
+  const [isScrolled, setIsScrolled] = useState(0);
   return (
     <div className="App">
       <NavStats
@@ -15,10 +16,14 @@ function App() {
         isLocked={isLocked}
         weather={weather}
         tempScale={tempScale}
-        setTempScale={setTempScale}/>
+        setTempScale={setTempScale}
+        isScrolled={isScrolled}
+        setIsScrolled={setIsScrolled} />
       {isLocked ?
         <Home_Locked
-          setIsLocked={setIsLocked} /> :
+          setIsLocked={setIsLocked}
+          isScrolled={isScrolled}
+          setIsScrolled={setIsScrolled} /> :
         <>
           <span className='overlay'></span>
           <Home_Open
@@ -26,7 +31,10 @@ function App() {
             weather={weather}
             setWeather={setWeather}
             tempScale={tempScale}
-            setTempScale={setTempScale} />
+            setTempScale={setTempScale}
+            isScrolled={isScrolled}
+            setIsScrolled={setIsScrolled} 
+          />
         </>
       }
     </div>

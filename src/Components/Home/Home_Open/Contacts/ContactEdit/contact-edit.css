@@ -1,3 +1,7 @@
+:root{
+  --contactEditTextColor: rgb(221, 221, 221);
+  --editBtnPosition: calc(40px + 10px)
+}
 #contact-edit-container{
    font-size: 19px;
    background: linear-gradient(180deg, rgba(0, 0, 0, 0.068) 0%, rgba(0, 0, 0, 0.808) 20%, rgba(0, 0, 0, 0.637) 100%);
@@ -11,9 +15,61 @@
   -moz-animation: fadeIn .5s;
   -o-animation: fadeIn .5s;
   -ms-animation: fadeIn .5s;
+  color: var(--contactEditTextColor); 
 }
-#nameSection{
-  border: 1px solid red;
-  height: 140px;
+.editContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-content-width);
+  position: fixed ;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+  -webkit-transition: background-color .3s ease-out;
+  -moz-transition: background-color .3s ease-out;
+  -o-transition: background-color .3s ease-out;
+}
+.edit_container_onScroll{
+  background-color: rgba(112, 111, 114, 0.48) !important;
+  backdrop-filter: blur(9px);
+  border-top: 1px solid rgba(112, 111, 114, 0.699);
+}
+.edit-button{
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  color: 	#5e8bd8;
+  padding: 5px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  
+}
+.edit-button:hover{
+  color: #5ec8d8;
+}
+.edit-button:active{
+  font-size: 1.07rem;
+  color: #5ed8ab;
+}
+.nameSection{
+  padding: 7px;
+  border-radius: 5px;
+  margin:40px 7px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+.name-section_name-input{
+ 
+}
+.contactImage{
+  height: 5rem;
+  width: 5rem;
+  padding: 1px;
+  border-radius: 50%;
+  background-color: var(--contactEditTextColor);
+  margin: 10px 0px;
+  border: 1px solid rgb(187, 187, 187);
 }
 
